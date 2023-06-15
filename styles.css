@@ -1,0 +1,46 @@
+
+#calc-outline {
+    background-color: palegreen;
+    border-style: solid;
+    border-color: peachpuff;
+    border-width: 10px;
+    height: 360px;
+    width: 400px;
+}
+
+.btns {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.operator, .tool, .operand {
+    height: 50px;
+    width: 100px;
+}
+
+.zero {
+    height: 50px;
+    width: 200px;
+}
+
+.space {
+    height: 90px;
+    background-color: white;
+    margin: 10px;
+}
+
+.operand, .zero {
+    background-color: hotpink;
+}
+
+.operator {
+    background-color: plum;
+}
+
+.tool {
+    background-color: coral;
+}
+
+button {
+    border-color: white
+}
