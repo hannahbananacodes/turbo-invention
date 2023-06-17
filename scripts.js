@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let decimal = document.querySelector("#decimal");
 
 
-    let numbers = document.querySelectorAll(".operand");
+    let numbers = document.querySelectorAll(".number");
     let operators = document.querySelectorAll(".operator");
 
     let previousScreen = document.querySelector(".previous");
@@ -19,18 +19,73 @@ document.addEventListener("DOMContentLoaded", function(){
 
     numbers.forEach((number) => number.addEventListener("click", function(e){
         handleNumber(e.target.textContent)
+        currentScreen.textContent = currentValue;
     }))
+
+    operators.forEach((op) => op.addEventListener("click", function(e){
+        handleOperator(e.target.textContent)
+        previousScreen.textContent = previousValue + " " + operator
+        currentScreen.textContent = currentValue;
+    }))
+
+    clear.addEventListener("click", function(){
+        previousValue = '';
+        currentValue = '';
+        operator = '';
+        previousScreen.textContent = currentValue;
+        currentScreen.textContent = currentValue;
+    })
+
+    equal.addEventListener("click", function(){
+        calculate()
+        previousScreen.textContent = '';
+        currentScreen.textContent = previousValue;
+    })
 })
 
 function handleNumber(num){
-    console.log(num);
+    if(currentValue.length <= 15){
+        currentValue += num;
+    }
 }
+
+function handleOperator(op){
+    operator = op;
+    previousValue = currentValue;
+    currentValue = '';
+}
+
+function calculate(){
+    previousValue = Number(previousValue);
+    currentValue = Number(currentValue);
+
+    if(operator === "+"){
+        previousValue += currentValue;
+    } else if (operator === "-"){
+        previousValue -= currentValue;
+    } else if (operator === "/"){
+        previousValue /= currentValue;
+    } else if (operator ==="*"){
+        previousValue *= currentValue;
+    } else if (operator === "%"){
+        previousValue %= currentValue;
+    }
+    previousValue = roundNumber(previousValue);
+    previousValue = previousValue.toString();
+    currentValue = previousValue.toString();
+}
+
+function roundNumber(num){
+    return Math.round(num*1000)/1000;
+}
+
+
 
 /*let result = 0;
         var input1 = 1 //prompt("Enter num1");
         var input2 = 1 //prompt("Enter num2");
         var operator = 'add' //prompt("Enter operation (add, subtract, multiply, divide)");
-        //num1 is first operand, num2 is second operand, operator is operator
+        //num1 is first number, num2 is second number, operator is operator
         var num1 = +input1;
         var num2 = +input2;
         

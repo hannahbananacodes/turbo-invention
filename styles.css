@@ -16,12 +16,12 @@
     flex-wrap: wrap;
 }
 
-.operator, .tool, .operand, .equals {
+.operator, .tool, .number, .equals {
     height: 50px;
     width: 100px;
 }
 
-.zero {
+#zero {
     height: 50px;
     width: 200px;
 }
@@ -37,7 +37,7 @@
     align-items: flex-end;
 }
 
-.operand, .zero {
+.number {
     background-color: hotpink;
 }
 
