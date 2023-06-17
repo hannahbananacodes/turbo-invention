@@ -4,77 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css"/>
+    <script src="scripts.js"></script>
     <title>Calculator</title>
 </head>
 <body>
-    <script>
-        let result = 0;
-        //var input1 = prompt("Enter num1");
-        //var input2 = prompt("Enter num2");
-        //var operator = prompt("Enter operation (add, subtract, multiply, divide)");
-        //num1 is first operand, num2 is second operand, operator is operator
-        var num1 = +input1;
-        var num2 = +input2;
-        
-
-    //functions
-        function add(num1, num2) {
-            result =  num1 + num2
-        console.log(result)
-        };
-
-        function subtract(num1, num2) {
-            result =  num1 - num2
-        console.log(result)
-        };
-        
-        function multiply(num1, num2) {
-            result =  num1 * num2
-        console.log(result)
-        };
-        function divide(num1, num2) {
-            result =  num1 / num2
-        console.log(result)
-        };
-
-        function mod(num1, num2) {
-            result = num1 % num2
-        console.log(result)
-        };
-
-        function operate (operator, num1, num2) {
-            if (operator == "add") {
-                add(num1, num2)
-            }
-            else if (operator == "subtract") {
-                subtract(num1, num2)
-            }
-            else if (operator =="multiply") {
-                multiply(num1, num2)
-            }
-            else if (operator == "divide") {
-                divide(num1, num2)
-            }
-            else if (operator == "mod") {
-                mod(num1, num2)
-            }
-        
-    }
-    operate(operator, num1, num2);
-
     
-    </script>
-
-
-
     <div id="calc-outline">
 <!--Space-->
-        <div class="space"><p>5138008</p></div>
+        <div class="space">
+            <div class="previous"></div>
+            <div class="current"></div>
+        </div>
         <div class="btns">
 <!--row 1-->
             <button class="tool" id="AC">AC</button>
             <button class="tool" id="neg">+/-</button>
-            <button class="tool" id="mod">%</button>
+            <button class="operator" id="mod">%</button>
             <button class="operator" id="divide">/</button>
 <!--row 2-->
             <button class="operand" id="7">7</button>
@@ -94,7 +39,7 @@
 <!--row 5-->
             <button class="zero" id="0">0</button>
             <button class="operand" id="decimal">.</button>
-            <button class="operator" id="equals">=</button>
+            <button class="equals" id="equals">=</button>
         </div>
     </div>
 

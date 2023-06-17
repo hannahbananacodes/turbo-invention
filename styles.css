@@ -16,7 +16,7 @@
     flex-wrap: wrap;
 }
 
-.operator, .tool, .operand {
+.operator, .tool, .operand, .equals {
     height: 50px;
     width: 100px;
 }
@@ -31,13 +31,17 @@
     background-color: white;
     margin: 10px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .operand, .zero {
     background-color: hotpink;
 }
 
-.operator {
+.operator, .equals {
     background-color: plum;
 }
 
@@ -62,4 +66,14 @@ p {
     margin-bottom: 0px;
     padding-bottom: 0px;
     color: hotpink;
+}
+
+.previous {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.current {
+    font-size: 35px;
+    margin: 10px;
 }
